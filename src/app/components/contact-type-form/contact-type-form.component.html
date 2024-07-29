@@ -1,0 +1,54 @@
+<!-- <p>contact-type-form works!</p> -->
+<div class="p-8 mt-4">
+
+
+    <div class="shadow p-6">
+        @if(isEdit){
+        <h4>Edit Contact Details</h4>
+        }@else {
+        <h4>Create Contact type</h4>
+        }
+
+
+        <form [formGroup]="contactTypeForm" (ngSubmit)="save()">
+        <!-- <form [formGroup]="contactTypeForm"> -->
+            <div class="w-full flex flex-wrap">
+                <div class="w-full flex flex-wrap">
+
+                    <!-- <div class="w-full flex flex-wrap">
+                        <mat-form-field class="w-full">
+                            <mat-label>id</mat-label>
+                            <input type="text" matInput placeholder="id" formControlName="contactTypeId" />
+                        </mat-form-field>
+                    </div> -->
+
+                    <div class="w-full flex flex-wrap">
+                        <mat-form-field class="w-full">
+                            <mat-label>Name</mat-label>
+                            <input type="text" matInput placeholder="Name" formControlName="name" />
+                        </mat-form-field>
+                    </div>
+
+                    <!-- <div class="w-full flex flex-wrap">
+                        <mat-form-field class="w-full">
+                            <mat-label>Modified Date</mat-label>
+                            <input type="date" matInput placeholder="Modified Date"
+                                formControlName="modifiedDate" />
+                        </mat-form-field>
+                    </div> -->
+
+                    @if (isEdit) {<div class="flex justify-center">
+                        <button mat-raised-button color="primary" [disabled]="!contactTypeForm.valid">Update</button>
+                    </div>}
+                    @else {<div class="flex justify-center">
+                        <button mat-raised-button color="primary" [disabled]="!contactTypeForm.valid" >Add</button>
+                    </div>}
+
+
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+</div>
